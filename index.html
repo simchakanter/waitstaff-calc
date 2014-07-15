@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Waitstaff Calculator</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="app-title">Waitstaff Calculator</h1>
+    <div class="meal-details display-box pull-left">
+      <div class="box-header">
+        Enter the meal details
+      </div>
+      <div class="box-content">
+        <form>
+          <div>
+            <label for="basePrice">Base Meal Price: $</label>
+            <input type="text" name="basePrice"</input>
+          </div>
+          <div>
+            <label for="taxRate">Tax Rate: %</label>
+            <input type="text" name="taxRate"</input>
+          </div>
+          <div>
+            <label for="tipPercentage">Tip Percentage: %</label>
+            <input type="text" name="tipPercentage"</input>
+          </div>
+          <div>
+            <input type="submit" value="Submit">
+            <button>Cancel</button>
+          </div>
+        </form>
+      </div> <!-- end meal-details-form-container -->
+    </div> <!-- end meal-details -->
+    <div class="results pull-right">
+      <div class="customer-charges display-box">
+        <div class="box-header">
+          Customer Charges
+        </div>
+        <div class="box-content">
+          <div class="operands">
+            Subtotal: 0.00 <br>
+            Tip: 0.00
+          </div>
+          <div class="total">
+            Total: 0.00
+          </div>
+        </div>
+      </div>
+      <div class="my-earnings-info display-box">
+        <div class="box-header">
+          My Earnings Info
+        </div>
+        <div class="box-content">
+          Tip Total: 0.00 <br>
+          Meal Count: 0 <br>
+          Avg. Tip Per Meal: 0.00
+        </div>
+      </div>
+      
+    </div>
+  </div> <!-- end container -->
+</body>
+</html>

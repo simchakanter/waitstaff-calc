@@ -1,0 +1,56 @@
+div {
+  font-family: sans-serif;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.app-title {
+  text-align: center;
+  font-size: 48px;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+}
+
+.box-header {
+  background-color: gray;
+  padding: 2px 2px 2px 5px;
+  color: #fff;
+}
+
+.box-content {
+  padding: 20px 20px 20px 20px;
+
+}
+
+.display-box {
+  border: 1px solid black;
+  
+}
+
+.meal-details {
+  width: 375px;
+}
+
+.customer-charges {
+  margin-bottom: 20px;
+}
+
+.results {
+  width: 375px;
+}
+
+.operands {
+  border-bottom: 1px solid black;
+}
