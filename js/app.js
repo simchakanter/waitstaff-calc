@@ -45,6 +45,12 @@ angular.module('waitstaff-calc', [])
             total += array[x];
           }
           this.averageTip = total / array.length;
+        },
+        reset: function() {
+          this.tipTotal = 0;
+          this.mealCount = 0;
+          this.historicalTipPercentages = [];
+          this.averageTip = 0;
         }
       }
     };
