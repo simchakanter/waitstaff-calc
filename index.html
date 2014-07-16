@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="waitstaff-calc">
 <head>
   <meta charset="UTF-8">
   <title>Waitstaff Calculator</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body ng-controller="calcCtrl">
   <div class="container">
     <h1 class="app-title">Waitstaff Calculator</h1>
     <div class="meal-details display-box pull-left">
@@ -14,22 +14,26 @@
         Enter the meal details
       </div>
       <div class="box-content">
-        <form>
+        <form name="mealForm" ng-submit="data.submitAttempted = true; data.meal.submit();" novalidate>
           <div>
             <label for="basePrice">Base Meal Price: $</label>
-            <input type="text" name="basePrice"</input>
+            <!-- if I put required before the closing tag, it didn't work -->
+            <input required type="number" name="basePrice" ng-model="data.meal.basePrice" </input>
           </div>
           <div>
             <label for="taxRate">Tax Rate: %</label>
-            <input type="text" name="taxRate"</input>
+            <input required type="number" name="taxRate" ng-model="data.meal.taxRate" </input>
           </div>
           <div>
             <label for="tipPercentage">Tip Percentage: %</label>
-            <input type="text" name="tipPercentage"</input>
+            <input required type="number" name="tipPercentage" ng-model="data.meal.tipPercentage" </input>
           </div>
-          <div>
+          <div class="error-messages" ng-show="mealForm.$invalid && data.submitAttempted === true">
+            All options are required. You must provide numerical values for all options.
+          </div>
+          <div class="form-actions">
             <input type="submit" value="Submit">
-            <button>Cancel</button>
+            <button ng-click="data.meal.clear();">Cancel</button>
           </div>
         </form>
       </div> <!-- end meal-details-form-container -->
@@ -41,11 +45,11 @@
         </div>
         <div class="box-content">
           <div class="operands">
-            Subtotal: 0.00 <br>
-            Tip: 0.00
+            Subtotal: ${{data.meal.basePrice + (data.meal.basePrice * data.meal.taxRate / 100) | number: 2 }} <br>
+            Tip: ${{ data.meal.basePrice * data.meal.tipPercentage / 100 | number : 2 }}
           </div>
           <div class="total">
-            Total: 0.00
+            Total: ${{ data.meal.basePrice + (data.meal.basePrice * data.meal.taxRate / 100) + (data.meal.basePrice * data.meal.tipPercentage / 100) | number: 2 }}
           </div>
         </div>
       </div>
@@ -54,13 +58,18 @@
           My Earnings Info
         </div>
         <div class="box-content">
-          Tip Total: 0.00 <br>
-          Meal Count: 0 <br>
-          Avg. Tip Per Meal: 0.00
+          Tip Total: ${{data.totals.tipTotal | number : 2}} <br>
+          Meal Count: {{data.totals.mealCount}} <br>
+          Avg. Tip Per Meal: {{data.totals.averageTip}}%
         </div>
       </div>
-      
-    </div>
+      <button class="pull-right">Reset</button>
+    </div> <!-- end results --> 
   </div> <!-- end container -->
+<!--   <div class="debugger">
+    {{data}}
+  </div> -->
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

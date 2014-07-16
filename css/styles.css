@@ -31,20 +31,21 @@ div {
 
 .box-content {
   padding: 20px 20px 20px 20px;
+  line-height: 24px;
+}
 
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .display-box {
   border: 1px solid black;
-  
+  margin-bottom: 20px;
 }
 
 .meal-details {
   width: 375px;
-}
-
-.customer-charges {
-  margin-bottom: 20px;
 }
 
 .results {
@@ -53,4 +54,14 @@ div {
 
 .operands {
   border-bottom: 1px solid black;
+}
+
+.debugger {
+  background: rgb(209, 199, 199);
+  clear: both;
+  text-align: center;
+}
+
+.error-messages {
+  color: red;
 }
