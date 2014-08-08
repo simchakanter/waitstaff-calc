@@ -1,3 +1,5 @@
+/* General */
+
 div {
   font-family: sans-serif;
 }
@@ -16,11 +18,40 @@ div {
   margin-top: 40px;
 }
 
+.debugger {
+  background: rgb(209, 199, 199);
+  text-align: center;
+}
+
+.error-messages {
+  color: red;
+}
+
+/* Main Template */
+
+.main-nav {
+  text-align: center;
+}
+
 .app-title {
   text-align: center;
   font-size: 48px;
   font-family: sans-serif;
   margin-bottom: 20px;
+}
+
+.views-container {
+  margin-top: 30px;
+}
+
+/* Display Boxes */
+
+.display-box {
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 375px;
+  box-sizing: border-box;
 }
 
 .box-header {
@@ -34,14 +65,11 @@ div {
   line-height: 24px;
 }
 
+/* New Meal */
+
 .form-actions {
   text-align: center;
   margin-top: 20px;
-}
-
-.display-box {
-  border: 1px solid black;
-  margin-bottom: 20px;
 }
 
 .meal-details {
@@ -56,12 +84,16 @@ div {
   border-bottom: 1px solid black;
 }
 
-.debugger {
-  background: rgb(209, 199, 199);
-  clear: both;
-  text-align: center;
+/* My earnings */
+
+.my-earnings-info {
+  position: relative;
 }
 
-.error-messages {
-  color: red;
+.btn-reset {
+  position: absolute;
+  bottom: -30px;
+  right: 10px;
 }
+
+

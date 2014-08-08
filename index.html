@@ -1,75 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="waitstaff-calc">
+<html lang="en" ng-app="wcApp">
 <head>
   <meta charset="UTF-8">
   <title>Waitstaff Calculator</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body ng-controller="calcCtrl">
+<body>
   <div class="container">
     <h1 class="app-title">Waitstaff Calculator</h1>
-    <div class="meal-details display-box pull-left">
-      <div class="box-header">
-        Enter the meal details
-      </div>
-      <div class="box-content">
-        <form name="mealForm" ng-submit="data.submitAttempted = true; data.meal.submit();" novalidate>
-          <div>
-            <label for="basePrice">Base Meal Price: $</label>
-            <!-- if I put required before the closing tag, it didn't work -->
-            <input required type="number" name="basePrice" ng-model="data.meal.basePrice" </input>
-          </div>
-          <div>
-            <label for="taxRate">Tax Rate: %</label>
-            <input required type="number" name="taxRate" ng-model="data.meal.taxRate" </input>
-          </div>
-          <div>
-            <label for="tipPercentage">Tip Percentage: %</label>
-            <input required type="number" name="tipPercentage" ng-model="data.meal.tipPercentage" </input>
-          </div>
-          <div class="error-messages" ng-show="mealForm.$invalid && data.submitAttempted === true">
-            All options are required. You must provide numerical values for all options.
-          </div>
-          <div class="form-actions">
-            <input type="submit" value="Submit">
-            <button ng-click="data.meal.clear();">Cancel</button>
-          </div>
-        </form>
-      </div> <!-- end meal-details-form-container -->
-    </div> <!-- end meal-details -->
-    <div class="results pull-right">
-      <div class="customer-charges display-box">
-        <div class="box-header">
-          Customer Charges
-        </div>
-        <div class="box-content">
-          <div class="operands">
-            Subtotal: ${{data.meal.basePrice + (data.meal.basePrice * data.meal.taxRate / 100) | number: 2 }} <br>
-            Tip: ${{ data.meal.basePrice * data.meal.tipPercentage / 100 | number : 2 }}
-          </div>
-          <div class="total">
-            Total: ${{ data.meal.basePrice + (data.meal.basePrice * data.meal.taxRate / 100) + (data.meal.basePrice * data.meal.tipPercentage / 100) | number: 2 }}
-          </div>
-        </div>
-      </div>
-      <div class="my-earnings-info display-box">
-        <div class="box-header">
-          My Earnings Info
-        </div>
-        <div class="box-content">
-          Tip Total: ${{data.totals.tipTotal | number : 2}} <br>
-          Meal Count: {{data.totals.mealCount}} <br>
-          Avg. Tip Per Meal: {{data.totals.averageTip}}%
-        </div>
-      </div>
-      <button class="pull-right" ng-click="data.totals.reset();">Reset</button>
-    </div> <!-- end results --> 
+    <nav class="main-nav">
+      <a href="#/">Home</a> |
+      <a href="#/new-meal">New Meal</a> |
+      <a href="#/my-earnings">My Earnings</a>
+    </nav>
+    <div ng-view class="views-container"></div>
+    
   </div> <!-- end container -->
 <!--   <div class="debugger">
     {{data}}
   </div> -->
   <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-route.min.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

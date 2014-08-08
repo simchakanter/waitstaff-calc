@@ -1,0 +1,11 @@
+<div class="my-earnings-info display-box">
+  <div class="box-header">
+    My Earnings Info
+  </div>
+  <div class="box-content">
+    Tip Total: ${{calculator.totals.tipTotal | number : 2}} <br>
+    Meal Count: {{calculator.totals.mealCount}} <br>
+    Avg. Tip Per Meal: {{calculator.totals.averageTip}}%
+  </div>
+  <button class="btn-reset" ng-click="calculator.totals.reset();">Reset</button>
+</div>
