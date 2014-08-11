@@ -16,6 +16,7 @@ div {
   width: 800px;
   margin: 0 auto;
   margin-top: 40px;
+  position: relative;
 }
 
 .debugger {
@@ -41,6 +42,11 @@ div {
 }
 
 .views-container {
+  position: relative;
+  height: 100%;
+}
+
+.views {
   margin-top: 30px;
 }
 
@@ -96,4 +102,35 @@ div {
   right: 10px;
 }
 
+/* View change animations */
 
+.animate-view.ng-enter {
+  transition: 1s linear all;
+  position: absolute;
+  top: 0;
+}
+
+.animate-view.ng-leave {
+  transition: .2s linear all;
+  position: absolute;
+  top: 0;
+}
+
+.animate-view.ng-enter {
+  opacity: 0;
+  left: 175px;
+}
+
+.animate-view.ng-enter-active {
+  opacity: 1;
+  left: 212px;
+}
+
+.animate-view.ng-leave {
+  opacity: 1;
+  left: 212px;
+}
+
+.animate-view.ng-leave-active {
+  opacity: 0;
+}

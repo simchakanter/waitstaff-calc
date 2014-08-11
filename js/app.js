@@ -1,4 +1,4 @@
-var wcApp = angular.module('wcApp', ['ngRoute']);
+var wcApp = angular.module('wcApp', ['ngRoute', 'ngAnimate']);
 
 wcApp.config(function($routeProvider) {
   $routeProvider
