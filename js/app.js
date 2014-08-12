@@ -3,15 +3,15 @@ var wcApp = angular.module('wcApp', ['ngRoute', 'ngAnimate']);
 wcApp.config(function($routeProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: '../views/home.html',
+    templateUrl: 'views/home.html',
     controller: 'calcCtrl'
   })
   .when('/new-meal', {
-    templateUrl: '../views/new-meal.html',
+    templateUrl: 'views/new-meal.html',
     controller: 'calcCtrl'
   })
   .when('/my-earnings', {
-    templateUrl: '../views/my-earnings.html',
+    templateUrl: 'views/my-earnings.html',
     controller: 'calcCtrl'
   })
   .otherwise({
